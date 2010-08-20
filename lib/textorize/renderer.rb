@@ -13,7 +13,11 @@ module Textorize
       set_attr_and_text options, string
       window.contentView = @text_view
       
-      @text_view.sizeToFit
+      #@text_view.sizeToFit
+      options[:marginbottom] ||= 0
+      options[:marginbottom] = options[:marginbottom].to_i
+      @text_view.setFrameSize(NSSize.new(@text_view.frame.width, @text_view.frame.height+options[:marginbottom]))
+      #puts @text_view.frame.width.to_s + ", " + @text_view.frame.height.to_s + ", " +  options[:marginbottom].to_s
       
       window.display
       window.orderFrontRegardless

@@ -50,6 +50,10 @@ opts = OptionParser.new do |opts|
     options[:background] = v
   end
   
+  opts.on('-m', '--marginbottom=[MARGINBOTTOM]', String, 'Margin bottom of the resulting image') do |v|
+    options[:marginbottom] = v
+  end
+  
   opts.on('-a', '--smoothing=[VALUE]', Integer, 'Font smoothing: 0=no subpixel AA, 1=light, 2=normal, 3=strong') do |v|
     options[:font_smoothing] = v
   end
@@ -74,5 +78,6 @@ options[:strings] = ARGV.first
 options[:width] ||= 250
 options[:obliqueness] ||= 0
 options[:util] ||= ''
+options[:marginbottom] ||= 0
 
 renderer = Textorize::Runner.new(options[:strings], options[:output], options)
