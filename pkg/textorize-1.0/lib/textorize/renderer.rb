@@ -17,7 +17,7 @@ module Textorize
       options[:marginbottom] ||= 0
       options[:marginbottom] = options[:marginbottom].to_i
       @text_view.setFrameSize(NSSize.new(@text_view.frame.width, @text_view.frame.height+options[:marginbottom]))
-      #puts @text_view.frame.width.to_s + ", " + @text_view.frame.height.to_s + ", " +  options[:marginbottom].to_s
+      puts @text_view.frame.width.to_s + ", " + @text_view.frame.height.to_s + ", " +  options[:marginbottom].to_s
       
       window.display
       window.orderFrontRegardless
